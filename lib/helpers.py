@@ -56,7 +56,12 @@ def update_department():
         
 
 def delete_department():
-    pass
+    id_ = input("Enter the department's id: ")
+    if department := Department.find_by_id(id_):
+        department.delete()
+        print(f'Department {id_} deleted')
+    else:
+        print(f'Department {id_} not found')
 
 
 # You'll implement the employee functions in the lab
@@ -87,3 +92,5 @@ def delete_employee():
 
 def list_department_employees():
     pass
+
+
